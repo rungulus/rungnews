@@ -1,6 +1,15 @@
 # rungusNews
 an open source news aggregator using RSS feeds
-## what we need to do
+
+## currently
+ - we have a basic page structure
+ - we can fetch a (local) rss file, and populate it on the page
+
+## known issues
+ - images do not populate
+ - cors error when fetching file externally
+
+## what this will be
 
  - Collate news articles from sources around the web
 		 - npr
