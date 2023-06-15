@@ -1,7 +1,9 @@
 let parser = new RSSParser();
-//EXTREMELY GROSS AND HACKY
-//WE SHOULD FIND ANOTHER WAY TO DO THIS!
-parser.parseURL('https://api.allorigins.win/raw?url=https://feeds.npr.org/1001/rss.xml', function(err, feed) { 
+parser.parseURL('npr-061423.xml', function(err, feed) { 
+  //this needs to be local, or else we get a CORS error (Access-Control-Allow-Origin)
+  //i'm pretty sure its not github, maybe it's cloudflare, but it also does happen locally
+  //so im going to hedge a bet that its the rss-parser.min.js library
+  //todo: #4 grab current rss feeds without running into CORS issues
   if (err) throw err;
   for (let i = 0; i < 10; i++) {
     const entry = feed.items[i];
