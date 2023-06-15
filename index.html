@@ -1,22 +1,11 @@
+<!DOCTYPE html>
 <html data-bs-theme="dark">
-
+  <!--we should load the scripts first here-->
   <link href="https://cdn.rungus.zone/news/css/bootstrap.min.css" rel="stylesheet">
   <!--this is horribly unoptimized, but we will use the entire iconsheet for testing purposes-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!--opengraph will go here at some point-->
   <header>
-    <div class="alert alert-warning mt-2" role="alert">
-      <h4 class="alert-heading">under construction</h4>
-      <p>
-        if you couldn't tell, i'm still working on this website. 
-        i don't have a timeframe on when it will start working, but i hope to soon!
-      </p>
-      <hr>
-        <p class="mb-0">
-          if you'd like, you can help me out on 
-          <a href="https://github.com/runguszone/rungusnews" class="alert-link">github</a>
-        </p>
-    </div>
     <noscript>
       <div class="alert alert-danger" role="alert">
         <h4 class="alert-heading">you don't have javascript turned on</h4>
@@ -30,21 +19,26 @@
     <!--can probably do it with some js magic? although thats terrible-->
     <!--todo: #1 figure this out lol-->
     <rungusnews>
-      <title>rungus news</title>
+      <title>open news</title>
       <div class="container text-center" id="newsheader">
         <div class="row d-flex justify-content-center">
           <div class="col-2 pt-5">
-            <a href="#"><span class="bi bi-twitter h4"></span></a>
           </div>
           <div class="col-auto text-center">
-            <h1 class="display-1">rungus news</h1>
-            <p class="text-body-secondary">an open source news aggregator</p>
+            <h1 class="display-1"><span style="color:#69f0ae">r</span>ungnews</h1>
+            <!-- <p class="text-body-secondary">an open source news aggregator</p> -->
           </div>
           <div class="col-2 pt-5">
-              <a href="https://github.com/runguszone/rungusnews"><span class="bi bi-github h4"></span></a>
+              
           </div>
         </div>
       </div>
+      <div class="alert alert-warning mt-2" role="alert">
+        <h6 class="alert-heading">under construction</h4>
+          <p class="mb-0 small">
+            if you'd like, you can help me out on 
+            <a href="https://github.com/runguszone/rungusnews" class="alert-link">github</a>
+          </p>
     </rungusnews>
   </header>
   
@@ -53,35 +47,35 @@
     <!--top stories-->
     <div class="row d-flex justify-content-center" id="topStories">
       <!--keeping it simple, using standard bs rows and columns to maintain responsiveness-->
-      <!--however, this will break on smaller devices (topMinor1 and 2 will show up on top of topMajor)
-      i know we can probably hide it on smaller devices, using a topMinor1 and 2 set below topMajor that only shows on small devices
+      <!--however, this will break on smaller devices (article1 and 2 will show up on top of article1)
+      i know we can probably hide it on smaller devices, using a article1 and 2 set below article1 that only shows on small devices
       but that feels hacky, we can do better. i don't know how yet -->
       <!--todo: #2 make sure minor stories do not show up in front of major ones-->
       <div class="col-2 pt-4">
-        <div id="bottom1">        
-          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="topMinor1Image">
-          <p class="lead" id="topMinor1Headline">topMinor1</p>
+        <div id="article1">        
+          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article1Image">
+          <p class="lead" id="article1Headline">article1</p>
         </div>
-        <div id="topMinor2">
-          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="topMinor2Image">
-          <p class="lead" id="topMinor2Headline">topMinor2</p>
+        <div id="article2">
+          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article2Image">
+          <p class="lead" id="article2Headline">article2</p>
         </div>
       </div>
-      <div class="col-auto">
-        <div id="topMajor">
-          <img src="https://dummyimage.com/600x400/000/fff" class="img-fluid" id="topMajorImage">
-          <p class="display-4" id="topMajorHeadline">topMajor</p>
-          <p class="lead" id="topMajorArticleQuote">topMajorArticleQuote</p>
+      <div class="col-8">
+        <div id="article0">
+          <img src="https://dummyimage.com/600x400/000/fff" class="img-fluid" id="article0Image">
+          <p class="display-5" id="article0Headline">article0</p>
+          <p class="lead" id="article0ArticleQuote">article0ArticleQuote</p>
         </div>
       </div>
       <div class="col-2 pt-4">
-        <div id="topMinor1">        
-          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="topMinor3Image">
-          <p class="lead" id="topMinor1Headline">topMinor3</p>
+        <div id="article3">        
+          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article3Image">
+          <p class="lead" id="article3Headline">article3</p>
         </div>
-        <div id="topMinor2">
-          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="topMinor4Image">
-          <p class="lead" id="topMinor2Headline">topMinor4</p>
+        <div id="article4">
+          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article4Image">
+          <p class="lead" id="article4Headline">article4</p>
         </div>
       </div>
     </div>
@@ -89,39 +83,39 @@
     <!--minor-ish stories-->
     <div class="row d-flex justify-content-center">
       <div class="col-2 pt-4">
-        <div id="topMinor1">        
-          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="bottom1Image">
-          <p class="lead" id="bottom1Headline">bottom1</p>
+        <div id="article5">        
+          <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article5Image">
+          <p class="lead" id="article5Headline">article5</p>
         </div>
         </div>
         <div class="col-2 pt-4">
-          <div id="topMinor1">        
-            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="bottom2Image">
-            <p class="lead" id="bottom2Headline">bottom2</p>
+          <div id="article6">        
+            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article6Image">
+            <p class="lead" id="article6Headline">article6</p>
           </div>
         </div>
         <div class="col-2 pt-4">
-          <div id="topMinor1">        
-            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="bottom3Image">
-            <p class="lead" id="bottom3Headline">bottom3</p>
+          <div id="article7">        
+            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article7Image">
+            <p class="lead" id="article7Headline">article7</p>
           </div>
         </div>
         <div class="col-2 pt-4">
-          <div id="topMinor1">        
-            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="bottom4Image">
-            <p class="lead" id="bottom4Headline">bottom4</p>
+          <div id="article8">        
+            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article8Image">
+            <p class="lead" id="article8Headline">article8</p>
           </div>
         </div>
         <div class="col-2 pt-4">
-          <div id="topMinor1">        
-            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="bottom5Image">
-            <p class="lead" id="bottom5Headline">botom5</p>
+          <div id="article9">        
+            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article9Image">
+            <p class="lead" id="article9Headline">article9</p>
           </div>
         </div>
         <div class="col-2 pt-4">
-          <div id="topMinor1">        
-            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="bottom6Image">
-            <p class="lead" id="bottom6Headline">bottom6</p>
+          <div id="article10">        
+            <img src="https://dummyimage.com/300x200/000/fff" class="img-fluid" id="article10Image">
+            <p class="lead" id="article10Headline">article10</p>
           </div>
         </div>
       </div>
@@ -131,6 +125,8 @@
   </body>
   <foot>
     <hr>
-    <p class="small">rungus news is open source under the apache license</p>
+    <p class="small">rungnews is open source, check it out on <a href="https://github.com/runguszone/rungnews">github</a> </p>
   </foot>
+  <script src="internal/rss-parser.min.js"></script>
+  <script src="internal/parse-rss-and-print.js"></script>
 </html>
