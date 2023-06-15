@@ -1,5 +1,7 @@
 let parser = new RSSParser();
-parser.parseURL('https://feeds.npr.org/1001/rss.xml', function(err, feed) { //right now we are only pulling from npr, we will deal with more news sources in the future!
+//EXTREMELY GROSS AND HACKY
+//WE SHOULD FIND ANOTHER WAY TO DO THIS!
+parser.parseURL('https://api.allorigins.win/raw?url=https://feeds.npr.org/1001/rss.xml', function(err, feed) { 
   if (err) throw err;
   for (let i = 0; i < 10; i++) {
     const entry = feed.items[i];
