@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark">
   <!--we should load the scripts first here-->
-  <link href="https://cdn.rungus.zone/news/css/bootstrap.min.css" rel="stylesheet">
-  <!--this is horribly unoptimized, but we will use the entire iconsheet for testing purposes-->
+  <link href="https://cdn.rungus.zone/v4/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
   <!--also should figure out how to serve the header font better-->
   <!--opengraph will go here at some point-->
+  <style>
+    /* should push this into its own css file at some point though */
+    .stickyText{
+      color:white;
+      position: sticky;
+      position: -webkit-sticky;
+    }
+    .runguszone{
+      font-family: 'Roboto Slab', serif;
+    }
+    .sidewaysText{
+      writing-mode: vertical-lr;
+    }
+    .spaceBG{
+      height: 100vh;
+      min-height: 500px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://cdn.rungus.zone/v3/img/bg.webp');
+    }
+    .ml-n {
+      margin-left: -1rem !important;
+    }
+    .mt-n {
+      margin-top: -2.5rem !important;
+    }
+    .siteText{
+      font-size: 350%;
+    }
+    .smallLink{
+      font-size: 75%;
+      padding: -1rem !important;
+    }
+  </style>
+  <!-- special styles for sidebar, will be in its own css file soon! -->
   <header>
     <noscript>
       <div class="alert alert-danger" role="alert">
@@ -19,6 +55,51 @@
         <!--yeah you can look at the html too!-->
       </div>
     </noscript>
+    <sidebar class="float-start fixed-top stickyText z-3 alert">
+      <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
+      <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
+      <!-- why? who the hell knows -->
+      <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark mx-auto">
+        <div class="sidewaysText">
+          <div class="fs-3 runguszone">         
+            <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+          </div>
+          <br>
+          <div class="ml-n pe-2 text-center">
+            <a class="btn btn-dark btn-outline-danger bi bi-youtube link-danger" href="https://www.youtube.com/@rungus"></a>
+            <a class="btn btn-outline-primary bi bi-discord link-primary" href="https://discord.gg/2VuJFdEcwM"></a>
+            <a class="btn btn-outline-success bi bi-mastodon link-success" href="https://wetdry.world/@rungus"></a>
+            <a class="btn btn-outline-info bi bi-twitter link-info" href="https://twitter.com/_rungus"></a>
+            <a class="btn btn-outline-light bi bi-steam link-light" href="https://steamcommunity.com/id/rungus"></a>
+      </div>
+        </div>
+        <hr class="m-0 mt-2 me-1 p-0">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+          <a class="btn btn-light disabled" style="pointer-events: all;" href="https://rungus.zone">
+            <i class="bi bi-arrow-left"></i>
+            <br>
+            <span class="smallLink">go home</span>
+          </a>
+          <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+            <i class="bi bi-shuffle"></i>
+            <br>
+            <span class="smallLink">randomizer</span>
+          </a>
+          <a class="btn btn-warning" href="https://rungus.zone/time">
+            <i class="bi bi-clock-history"></i>
+            <br>
+            <span class="smallLink">time</span>
+          </a>
+          <a class="btn btn-success" href="https://rungus.zone/cow">
+            <i class="bi bi-chat-quote"></i>
+            <br>
+            <span class="smallLink">cow advice</span>
+          </a>
+          
+        </div>
+      </div> 
+      <!-- this is probably terrible on *really* ultrawide monitors -->
+    </sidebar>
     <!--since we are letting anyone clone this, we should probably seperate this from the download, so people don't pretend they are me-->
     <!--can probably do it with some js magic? although thats terrible-->
     <!--todo: #1 figure this out lol-->
@@ -36,7 +117,7 @@
           </div>
         </div>
       </div>
-      <div class="alert alert-warning mt-2" role="alert">
+      <div class="container text-center alert alert-warning mt-2" role="alert">
         <h6 class="alert-heading">under construction</h6>
           <p class="mb-0 small">
             if you'd like, you can help me out on 
@@ -45,11 +126,12 @@
       </div>
     </rungusnews>
   </header>
-  
   <hr>
-  <body class="container text-center">
+  
+  <body>
+    <div class="container">
     <!--top stories-->
-    <div class="row d-flex justify-content-center" id="topStories">
+    <div class="row" id="topStories">
       <!--keeping it simple, using standard bs rows and columns to maintain responsiveness-->
       <!--however, this will break on smaller devices (article1 and 2 will show up on top of article1)
       i know we can probably hide it on smaller devices, using a article1 and 2 set below article1 that only shows on small devices
@@ -131,6 +213,6 @@
     <hr>
     <p class="small">rungnews is open source, check it out on <a href="https://github.com/runguszone/rungnews">github</a> </p>
   </foot>
-  <script src="internal/rss-parser.min.js"></script>
-  <script src="internal/parse-rss-and-print.js"></script>
+  <!-- <script src="internal/rss-parser.min.js"></script>
+  <script src="internal/parse-rss-and-print.js"></script> -->
 </html>
