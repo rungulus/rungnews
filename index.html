@@ -10,16 +10,16 @@
   <!--opengraph will go here at some point-->
   <style>
     /* should push this into its own css file at some point though */
-    .stickyText{
+    .stickyBar{
       color:white;
-      position: sticky;
-      position: -webkit-sticky;
+      position: fixed;
     }
     .runguszone{
       font-family: 'Roboto Slab', serif;
     }
     .sidewaysText{
       writing-mode: vertical-lr;
+      text-orientation: mixed;
     }
     .spaceBG{
       height: 100vh;
@@ -31,10 +31,13 @@
       background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://cdn.rungus.zone/v3/img/bg.webp');
     }
     .ml-n {
-      margin-left: -1rem !important;
+      margin-left: -2rem !important;
     }
     .mt-n {
-      margin-top: -2.5rem !important;
+      margin-top: -1rem !important;
+    }
+    .mb-n {
+      margin-bottom: -0.3rem !important;
     }
     .siteText{
       font-size: 350%;
@@ -55,30 +58,36 @@
         <!--yeah you can look at the html too!-->
       </div>
     </noscript>
-    <sidebar class="float-start fixed-top stickyText z-3 alert">
+    <sidebar class="stickyBar z-3 alert">
       <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
       <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
       <!-- why? who the hell knows -->
-      <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark mx-auto">
-        <div class="sidewaysText">
-          <div class="fs-3 runguszone">         
-            <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+      <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark">
+        <div>
+          <div class="runguszone">         
+            <span class="sidewaysText">
+              <span class="fs-2">
+                <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+              </span>
+              <div class="fs-3">
+                <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus"></a>
+                <!-- for some reason youtube has a big margin on the bottom -->
+                <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
+                <a class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
+                <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
+                <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+              </div>
+  
+            </span>
+            
           </div>
-          <br>
-          <div class="ml-n pe-2 text-center">
-            <a class="btn btn-dark btn-outline-danger bi bi-youtube link-danger" href="https://www.youtube.com/@rungus"></a>
-            <a class="btn btn-outline-primary bi bi-discord link-primary" href="https://discord.gg/2VuJFdEcwM"></a>
-            <a class="btn btn-outline-success bi bi-mastodon link-success" href="https://wetdry.world/@rungus"></a>
-            <a class="btn btn-outline-info bi bi-twitter link-info" href="https://twitter.com/_rungus"></a>
-            <a class="btn btn-outline-light bi bi-steam link-light" href="https://steamcommunity.com/id/rungus"></a>
-      </div>
         </div>
         <hr class="m-0 mt-2 me-1 p-0">
         <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
-          <a class="btn btn-light disabled" style="pointer-events: all;" href="https://rungus.zone">
-            <i class="bi bi-arrow-left"></i>
+          <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+            <i class="bi bi-newspaper"></i>
             <br>
-            <span class="smallLink">go home</span>
+            <span class="smallLink">rungnews</span>
           </a>
           <a class="btn btn-primary" href="https://rungus.zone/randomizer">
             <i class="bi bi-shuffle"></i>
