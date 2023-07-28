@@ -8,45 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
   <!--also should figure out how to serve the header font better-->
   <!--opengraph will go here at some point-->
-  <style>
-    /* should push this into its own css file at some point though */
-    .stickyBar{
-      color:white;
-      position: fixed;
-    }
-    .runguszone{
-      font-family: 'Roboto Slab', serif;
-    }
-    .sidewaysText{
-      writing-mode: vertical-lr;
-      text-orientation: mixed;
-    }
-    .spaceBG{
-      height: 100vh;
-      min-height: 500px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://cdn.rungus.zone/v3/img/bg.webp');
-    }
-    .ml-n {
-      margin-left: -2rem !important;
-    }
-    .mt-n {
-      margin-top: -1rem !important;
-    }
-    .mb-n {
-      margin-bottom: -0.3rem !important;
-    }
-    .siteText{
-      font-size: 350%;
-    }
-    .smallLink{
-      font-size: 75%;
-      padding: -1rem !important;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.rungus.zone/v4/css/custom.css">
   <!-- special styles for sidebar, will be in its own css file soon! -->
   <header>
     <noscript>
@@ -58,11 +21,11 @@
         <!--yeah you can look at the html too!-->
       </div>
     </noscript>
-    <sidebar class="stickyBar z-3 alert">
+    <lg-sidebar class="stickyBar z-3 d-none d-lg-block alert">
       <!-- i wrangled with css and bootstrap for like 2 days to get this to work good -->
-      <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start -->
+      <!-- turns out im a dumbass, there is no margin-left (ml) in bootstrap, its ms for margin-start! -->
       <!-- why? who the hell knows -->
-      <div class="p-0 ps-1 pt-3 pb-1 alert alert-dark">
+      <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark">
         <div>
           <div class="runguszone">         
             <span class="sidewaysText">
@@ -70,50 +33,162 @@
                 <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
               </span>
               <div class="fs-3">
-                <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus"></a>
+                <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus" aria-label="youtube"></a>
                 <!-- for some reason youtube has a big margin on the bottom -->
-                <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM"></a>
-                <a class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus"></a>
-                <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus"></a>
-                <a class="bi bi-steam link-light pt-1 m-0" href="https://steamcommunity.com/id/rungus"></a>
+                <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM" aria-label="discord"></a>
+                <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus" aria-label="mastodon"></a>
+                <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus" aria-label="twitter"></a>
+                <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone" aria-label="github"></a>
               </div>
   
             </span>
             
           </div>
         </div>
-        <hr class="m-0 mt-2 me-1 p-0">
-        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
-          <a class="btn btn-danger" href="https://blog.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+  
+            <hr class="m-0 mt-2 me-1 p-0">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical btn-group-sm">
+          <a class="btn btn-danger" href="https://rungusrungus.tumblr.com/" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
             <i class="bi bi-pencil-square"></i>
-            <br>
             <span class="smallLink">blog</span>
           </a>
-          <a class="btn btn-light disabled" href="https://rungus.zone" style="pointer-events: all;">
-            <i class="bi bi-arrow-left"></i>
-            <br>
-            <span class="smallLink">back home</span>
+          <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+            <i class="bi bi-newspaper"></i>
+            <span class="smallLink">rungnews</span>
           </a>
           <a class="btn btn-primary" href="https://rungus.zone/randomizer">
             <i class="bi bi-shuffle"></i>
-            <br>
             <span class="smallLink">randomizer</span>
           </a>
           <a class="btn btn-warning" href="https://rungus.zone/time">
             <i class="bi bi-clock-history"></i>
-            <br>
             <span class="smallLink">time</span>
           </a>
           <a class="btn btn-success" href="https://rungus.zone/cow">
             <i class="bi bi-chat-quote"></i>
-            <br>
             <span class="smallLink">cow advice</span>
           </a>
-          
         </div>
+        <hr class="m-0 mt-1 mb-0 me-1 p-0">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical btn-group-sm">
+          <a class="btn btn-secondary" href="https://rungus.zone/">
+              <i class="bi bi-house-fill"></i>
+              <span class="smallLink">back home</span>
+            </a>
+          </div>
       </div> 
       <!-- this is probably terrible on *really* ultrawide monitors -->
-    </sidebar>
+    </lg-sidebar>
+    <!-- sm-md sidebar (tablets, some laptops) -->
+    <s-sidebar class="stickyBar z-3 d-lg-none d-sm-block d-none m-1">
+      <div class="p-0 ps-1 pt-3 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#s-sidebarLinks">
+        <div>
+          <div class="runguszone ps-1">         
+            <span class="sidewaysText">
+              <span class="fs-2">
+                <span style="color:#69f0ae">r</span>ungus<span class="text-muted">.zone</span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="s-sidebarLinks">
+        <hr class="m-0 mt-2 me-1 p-0">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical">
+          <a class="btn btn-danger" href="https://rungusrungus.tumblr.com/" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+            <i class="bi bi-pencil-square"></i>
+            <br>
+          </a>
+          <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+            <i class="bi bi-newspaper"></i>
+            <br>
+          </a>
+          <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+            <i class="bi bi-shuffle"></i>
+            <br>
+          </a>
+          <a class="btn btn-warning" href="https://rungus.zone/time">
+            <i class="bi bi-clock-history"></i>
+            <br>
+          </a>
+          <a class="btn btn-success" href="https://rungus.zone/cow">
+            <i class="bi bi-chat-quote"></i>
+            <br>
+          </a>
+              
+        </div>
+        <hr class="m-0 mt-1 mb-0 me-1 p-0">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical btn-group-sm">
+          <a class="btn btn-secondary" href="https://rungus.zone/">
+              <i class="bi bi-house-fill"></i>
+              <span class="smallLink"></span>
+            </a>
+          </div>
+        <hr class="m-0 mt-2 me-1 p-0">
+        <div class="fs-3 btn-group-vertical d-grid mt-1 pe-1 pb-1 pt-1">
+          <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus" aria-label="youtube"></a>
+          <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM" aria-label="discord"></a>
+          <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus" aria-label="mastodon"></a>
+          <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus" aria-label="twitter"></a>
+          <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone" aria-label="github"></a>
+        </div>
+      </div> 
+    </div>
+    </s-sidebar>
+    <!-- xs sidebar (phones) -->
+    <xs-sidebar class="stickyBar z-3 d-lg-none d-sm-none d-block m-1">
+      <div class="p-0 pe-1 pb-1 btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#xs-sidebarLinks">
+        <div>
+          <div class="runguszone ms-3 me-3 text-center">         
+            <span class="text-center">
+              <span class="fs-2 text-center ps-1">
+                <span style="color:#69f0ae">r</span><span class="text-muted">z</span>
+              </span>
+            </span>     
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="xs-sidebarLinks">
+        <hr class="m-0 mt-2 me-1 p-0 ms-1">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical ms-1 m-0 p-0">
+          <a class="btn btn-danger" href="https://rungusrungus.tumblr.com/" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+            <i class="bi bi-pencil-square"></i>
+            <br>
+          </a>
+          <a class="btn btn-light" href="https://news.rungus.zone" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+            <i class="bi bi-newspaper"></i>
+            <br>
+          </a>
+          <a class="btn btn-primary" href="https://rungus.zone/randomizer">
+            <i class="bi bi-shuffle"></i>
+            <br>
+          </a>
+          <a class="btn btn-warning" href="https://rungus.zone/time">
+            <i class="bi bi-clock-history"></i>
+            <br>
+          </a>
+          <a class="btn btn-success" href="https://rungus.zone/cow">
+            <i class="bi bi-chat-quote"></i>
+            <br>
+          </a>
+              
+        </div>
+        <hr class="m-0 mt-1 mb-0 me-1 p-0">
+        <div class="text-center d-grid mt-1 pe-1 pb-1 pt-1 btn-group-vertical btn-group-sm">
+          <a class="btn btn-secondary" href="https://rungus.zone/">
+              <i class="bi bi-house-fill"></i>
+              <span class="smallLink"></span>
+            </a>
+          </div>
+        <hr class="m-0 mt-2 me-1 p-0 ms-1">
+        <div class="fs-3 btn-group-vertical d-grid mt-1 pe-1 pb-1 pt-1">
+          <a class="bi-youtube link-danger pt-1 mb-n" href="https://www.youtube.com/@rungus" aria-label="youtube"></a>
+          <a class="bi bi-discord link-primary pt-1 m-0" href="https://discord.gg/2VuJFdEcwM" aria-label="discord"></a>
+          <a rel="me" class="bi bi-mastodon link-success pt-1 m-0" href="https://wetdry.world/@rungus" aria-label="mastodon"></a>
+          <a class="bi bi-twitter link-info pt-1 m-0" href="https://twitter.com/_rungus" aria-label="twitter"></a>
+          <a class="bi bi-github link-light pt-1 m-0" href="https://github.com/runguszone" aria-label="github"></a>
+        </div>
+      </div> 
+    </div>
+    </xs-sidebar>
     <!--since we are letting anyone clone this, we should probably seperate this from the download, so people don't pretend they are me-->
     <!--can probably do it with some js magic? although thats terrible-->
     <!--todo: #1 figure this out lol-->
